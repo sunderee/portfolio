@@ -1,0 +1,1 @@
+Very simple personal website built with Flutter. It uses GitHub Actions to build and deploy the website to a separate branch. It is then served on DigitalOcean.

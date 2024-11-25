@@ -1,0 +1,35 @@
+name: site
+description: "Personal website developed with Flutter"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.4"
+  flutter: ">=3.24.5"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.15
+  web: ^1.1.0
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.14.1
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/bluesky.svg
+    - assets/email.svg
+    - assets/github.svg
+    - assets/linkedin.svg
+    - assets/threads.svg
+    - assets/twitter.svg
+
+flutter_launcher_icons:
+  web:
+    generate: true
+    image_path: public/portfolio.png
+    background_color: "#121212"
+    theme_color: "#FFFFFA"
