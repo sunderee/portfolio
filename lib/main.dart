@@ -9,5 +9,5 @@ void main() {
     ),
   );
 
-  runApp(App());
+  runApp(const App());
 }

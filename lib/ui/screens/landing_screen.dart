@@ -10,7 +10,7 @@ final class LandingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        minimum: EdgeInsets.all(16.0),
+        minimum: const EdgeInsets.all(16.0),
         child: SizedBox(
           height: context.media.size.height,
           width: context.media.size.width,
@@ -29,8 +29,8 @@ final class LandingScreen extends StatelessWidget {
                   color: context.theme.colorScheme.onSurfaceVariant,
                 ),
               ),
-              SizedBox(height: 16.0),
-              Wrap(
+              const SizedBox(height: 16.0),
+              const Wrap(
                 alignment: WrapAlignment.center,
                 spacing: 8.0,
                 children: [
