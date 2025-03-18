@@ -2,11 +2,6 @@
 {{flutter_build_config}}
 
 _flutter.loader.load({
-    config: {
-        canvasKitVariant: 'auto',
-        canvasKitForceCpuOnly: false,
-        renderer: 'skwasm'
-    },
     onEntrypointLoaded: async function (engineInitializer) {
         const LOADER_ID = "preloader";
 

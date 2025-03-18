@@ -21,7 +21,7 @@ jobs:
       run: flutter pub get
     
     - name: Build web
-      run: flutter build web --release --wasm --no-source-maps --optimization-level=4
+      run: flutter build web --release --wasm
     
     - name: Deploy to static branch
       run: |
