@@ -1,0 +1,29 @@
+name: portfolio
+description: Portfolio application of Peter Aleksander Bizjak
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: ">=3.7.2"
+  flutter: ">=3.29.2"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.17
+  web: ^1.1.1
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.14.3
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+  
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/bluesky.svg
+    - assets/github.svg
+    - assets/linkedin.svg
+    - assets/threads.svg
+    - assets/twitter.svg

@@ -1,0 +1,50 @@
+name: Build and Deploy Flutter Web Application
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Flutter
+      uses: flutter-actions/setup-flutter@v3
+      with:
+        flutter-version: 'latest'
+        channel: 'stable'
+    
+    - name: Install dependencies
+      run: flutter pub get
+    
+    - name: Build web
+      run: flutter build web --release --wasm --no-source-maps --optimization-level=4
+    
+    - name: Deploy to static branch
+      run: |
+        # Save build output to a temporary location
+        mkdir -p /tmp/flutter_web_build
+        cp -R build/web/* /tmp/flutter_web_build/
+        
+        # Configure git
+        git config --global user.name github-actions
+        git config --global user.email github-actions@github.com
+        
+        # Create completely empty branch (orphan)
+        git checkout --orphan static-temp
+        
+        # Remove everything
+        git rm -rf --cached .
+        rm -rf *
+        rm -rf .github .git* .flutter*
+        
+        # Copy build output back
+        cp -R /tmp/flutter_web_build/* .
+        
+        # Add, commit and push
+        git add .
+        git commit -m "Deploy Flutter web app"
+        git push -f origin static-temp:static
