@@ -36,10 +36,11 @@ jobs:
         # Create completely empty branch (orphan)
         git checkout --orphan static-temp
         
-        # Remove everything
-        git rm -rf --cached .
-        rm -rf *
-        rm -rf .github .git* .flutter*
+        # Remove everything from git tracking
+        git rm -rf .
+        
+        # Remove all files but preserve .git directory
+        find . -mindepth 1 -maxdepth 1 -not -name ".git" -exec rm -rf {} \;
         
         # Copy build output back
         cp -R /tmp/flutter_web_build/* .
