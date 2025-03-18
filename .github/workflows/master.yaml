@@ -12,10 +12,10 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Setup Flutter
-      uses: flutter-actions/setup-flutter@v3
+      uses: flutter-actions/setup-flutter@v4
       with:
-        flutter-version: 'latest'
-        channel: 'stable'
+        channel: stable
+        version: latest
     
     - name: Install dependencies
       run: flutter pub get
