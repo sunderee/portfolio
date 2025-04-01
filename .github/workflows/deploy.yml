@@ -1,0 +1,56 @@
+name: Build and Deploy Static Site
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build project
+        run: bun run build
+
+      - name: Deploy to static branch
+        run: |
+          # Configure git
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          # Save dist contents to temp directory
+          mkdir -p /tmp/dist-output
+          cp -r dist/* /tmp/dist-output/
+          
+          # Create a fresh static branch with no history or files
+          git checkout --orphan static
+          
+          # Remove all files from the working directory
+          git rm -rf --cached .
+          rm -rf *
+          rm -rf .github .git/index
+          
+          # Copy only the dist content to the root
+          cp -r /tmp/dist-output/* .
+          
+          # Add and commit the changes
+          git add .
+          git status
+          git commit -m "Deploy static site from commit ${GITHUB_SHA}"
+          
+          # Force push to update or create the static branch
+          git push -f origin static 
