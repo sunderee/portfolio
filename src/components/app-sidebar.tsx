@@ -1,6 +1,8 @@
+import { ROUTES } from "@/lib/constants";
 import { BriefcaseIcon, ClockIcon, Home, MailIcon, UserIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
 
@@ -26,15 +28,19 @@ export default function AppSidebar() {
             <SidebarContent>
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <SidebarMenuButton>
-                            <Home />
-                            <span>Home</span>
+                        <SidebarMenuButton asChild>
+                            <Link href={ROUTES.HOME}>
+                                <Home />
+                                <span>Home</span>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                        <SidebarMenuButton>
-                            <UserIcon />
-                            <span>About</span>
+                        <SidebarMenuButton asChild>
+                            <Link href={ROUTES.ABOUT}>
+                                <UserIcon />
+                                <span>About</span>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>

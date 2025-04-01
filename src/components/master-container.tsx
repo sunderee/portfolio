@@ -1,7 +1,11 @@
+'use client';
+
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ROUTES } from "@/lib/constants";
 import { LayoutProps } from "@/types/ui";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import AppSidebar from "./app-sidebar";
 import { Button } from "./ui/button";
@@ -11,6 +15,7 @@ export default function MasterContainer({ children }: LayoutProps) {
     const isMobile = useIsMobile();
     const { resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
+
 
     useEffect(() => setMounted(true), []);
 
@@ -40,8 +45,8 @@ export default function MasterContainer({ children }: LayoutProps) {
                 <div className="flex flex-row justify-between w-[600px]">
                     <Image src={coffeeIcon} alt="Logo" width={32} height={32} />
                     <div className="flex flex-row">
-                        <Button variant="ghost">Home</Button>
-                        <Button variant="ghost">About</Button>
+                        <Link href={ROUTES.HOME}><Button variant="ghost">Home</Button></Link>
+                        <Link href={ROUTES.ABOUT}><Button variant="ghost">About</Button></Link>
                         <Button variant="ghost">Services</Button>
                         <Button variant="ghost">Process</Button>
                         <Button variant="ghost">Contact</Button>
