@@ -1,14 +1,21 @@
 import { BriefcaseIcon, ClockIcon, Home, MailIcon, UserIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
 
 export default function AppSidebar() {
     const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
 
-    const coffeeIcon = resolvedTheme === 'dark'
-        ? '/icon-white.svg'
-        : '/icon-black.svg';
+    useEffect(() => setMounted(true), []);
+
+    const defaultIcon = '/icon-black.svg';
+    const coffeeIcon = !mounted
+        ? defaultIcon
+        : (resolvedTheme === 'dark'
+            ? '/icon-white.svg'
+            : '/icon-black.svg');
 
     return (
         <Sidebar>

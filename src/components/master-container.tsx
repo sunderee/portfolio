@@ -2,6 +2,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { LayoutProps } from "@/types/ui";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import AppSidebar from "./app-sidebar";
 import { Button } from "./ui/button";
 import { SidebarProvider, SidebarTrigger } from "./ui/sidebar";
@@ -9,10 +10,20 @@ import { SidebarProvider, SidebarTrigger } from "./ui/sidebar";
 export default function MasterContainer({ children }: LayoutProps) {
     const isMobile = useIsMobile();
     const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
 
-    const coffeeIcon = resolvedTheme === 'dark'
-        ? '/icon-white.svg'
-        : '/icon-black.svg';
+    useEffect(() => setMounted(true), []);
+
+    const defaultIcon = '/icon-black.svg';
+    const coffeeIcon = !mounted
+        ? defaultIcon
+        : (resolvedTheme === 'dark'
+            ? '/icon-white.svg'
+            : '/icon-black.svg');
+
+    if (!mounted) {
+        return <div className="min-h-screen">{children}</div>;
+    }
 
     return isMobile
         ? <>
