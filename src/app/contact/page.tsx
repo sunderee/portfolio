@@ -35,14 +35,14 @@ export default function ContactPage() {
 
             <div className="flex flex-col space-y-4 mt-8">
                 <h2 className="text-2xl font-bold">Professional Engagements</h2>
-                <p>As a professional who values discretion, I maintain strict confidentiality regarding client work. While many of my projects operate under non-disclosure agreements, I'm happy to discuss:</p>
+                <p>As a professional who values discretion, I maintain strict confidentiality regarding client work. While many of my projects operate under non-disclosure agreements, I&apos;m happy to discuss:</p>
                 <ul className="list-disc list-inside">
                     <li className="ml-4 mt-2">Relevant expertise and capabilities for your specific needs</li>
                     <li className="ml-4 mt-2">General approaches to solving challenges similar to yours</li>
                     <li className="ml-4 mt-2">Working methodologies and collaboration frameworks</li>
                     <li className="ml-4 mt-2">References from past clients (upon request and with their permission)</li>
                 </ul>
-                <p>I am looking forward to exploring how my expertise in software development, cybersecurity, and technical consulting can contribute to your organization's success.</p>
+                <p>I am looking forward to exploring how my expertise in software development, cybersecurity, and technical consulting can contribute to your organization&apos;s success.</p>
             </div>
 
             <Separator />
