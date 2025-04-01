@@ -5,6 +5,8 @@ import MasterHeader from "@/components/master-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ROUTES } from "@/lib/constants";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function ServicesPage() {
@@ -19,7 +21,11 @@ export default function ServicesPage() {
 
     return <MasterContainer>
         <div className={layoutClass}>
-            <MasterHeader title="Services" subtitle="Expert solutions tailored to your specific needs." />
+            <MasterHeader
+                title="Services"
+                subtitle="Expert solutions tailored to your specific needs."
+            />
+
             <div className="flex flex-col space-y-4">
                 <h2 className="text-2xl font-bold">Software Development</h2>
                 <ServiceCard
@@ -35,6 +41,7 @@ export default function ServicesPage() {
                     description="Creating responsive, intuitive user interfaces using React, Next.js, and Angular. Development focused on exceptional user experience with clean, maintainable code."
                 />
             </div>
+
             <div className="flex flex-col space-y-4 mt-8">
                 <h2 className="text-2xl font-bold">Cybersecurity</h2>
                 <ServiceCard
@@ -50,6 +57,7 @@ export default function ServicesPage() {
                     description="Expert guidance navigating cybersecurity and data privacy regulations. Ensuring your systems and processes meet applicable legal requirements while maintaining operational efficiency."
                 />
             </div>
+
             <div className="flex flex-col space-y-4 mt-8">
                 <h2 className="text-2xl font-bold">Consulting & Content</h2>
                 <ServiceCard
@@ -62,7 +70,7 @@ export default function ServicesPage() {
                 />
             </div>
 
-            <Button className="mt-8">Get in touch</Button>
+            <Link href={ROUTES.CONTACT}><Button className="mt-8 w-full">Get in touch</Button></Link>
         </div>
     </MasterContainer>
 }

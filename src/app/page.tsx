@@ -14,7 +14,7 @@ export default function Home() {
   useEffect(() => setMounted(true), []);
 
   const layoutClass = mounted
-    ? `flex flex-col items-center justify-center ${isMobile ? 'h-[calc(100vh-28px)] w-[calc(100vw-28px)] px-4' : 'h-[calc(100vh-44px)] w-[720px]'}`
+    ? `flex flex-col items-center justify-center ${isMobile ? 'h-[calc(100vh-28px)] w-screen px-4' : 'h-[calc(100vh-44px)] w-[720px]'}`
     : 'flex flex-col items-center justify-center min-h-screen px-4';
 
   return <MasterContainer>
@@ -25,7 +25,7 @@ export default function Home() {
 
       <div className="mt-12 flex flex-row gap-4">
         <Link href={ROUTES.SERVICES}><Button variant="outline">What can I do for you?</Button></Link>
-        <Button variant="default">Get in touch today</Button>
+        <Link href={ROUTES.CONTACT}><Button variant="default">Get in touch today</Button></Link>
       </div>
     </div>
   </MasterContainer>

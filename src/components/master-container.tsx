@@ -48,7 +48,7 @@ export default function MasterContainer({ children }: LayoutProps) {
                         <Link href={ROUTES.HOME}><Button variant="ghost">Home</Button></Link>
                         <Link href={ROUTES.ABOUT}><Button variant="ghost">About</Button></Link>
                         <Link href={ROUTES.SERVICES}><Button variant="ghost">Services</Button></Link>
-                        <Button variant="ghost">Contact</Button>
+                        <Link href={ROUTES.CONTACT}><Button variant="ghost">Contact</Button></Link>
                     </div>
                 </div>
             </div>

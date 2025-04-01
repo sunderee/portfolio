@@ -52,9 +52,11 @@ export default function AppSidebar() {
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                        <SidebarMenuButton>
-                            <MailIcon />
-                            <span>Contact</span>
+                        <SidebarMenuButton asChild>
+                            <Link href={ROUTES.CONTACT}>
+                                <MailIcon />
+                                <span>Contact</span>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
