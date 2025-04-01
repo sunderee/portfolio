@@ -3,6 +3,8 @@
 import MasterContainer from "@/components/master-container";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { ROUTES } from "@/lib/constants";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -22,7 +24,7 @@ export default function Home() {
       <p className="mt-4 text-lg text-center text-muted-foreground">I help businesses build secure, robust, and efficient software solutions that solve real-world problems and drive growth.</p>
 
       <div className="mt-12 flex flex-row gap-4">
-        <Button variant="outline">What can I do for you?</Button>
+        <Link href={ROUTES.SERVICES}><Button variant="outline">What can I do for you?</Button></Link>
         <Button variant="default">Get in touch today</Button>
       </div>
     </div>

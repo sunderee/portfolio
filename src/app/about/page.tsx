@@ -12,8 +12,8 @@ export default function AboutPage() {
     useEffect(() => setMounted(true), []);
 
     const layoutClass = mounted
-        ? `flex flex-col space-y-4 ${isMobile ? 'px-4' : 'h-[calc(100vh-44px)] w-[720px]'}`
-        : 'flex flex-col min-h-screen space-y-4 px-4';
+        ? `flex flex-col space-y-4 ${isMobile ? 'px-4 mb-4 w-screen' : 'mb-4 w-[720px]'}`
+        : 'flex flex-col min-h-screen space-y-4 px-4 mb-4 mt-4';
 
     return <MasterContainer>
         <div className={layoutClass}>

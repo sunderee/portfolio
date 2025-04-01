@@ -1,5 +1,5 @@
 import { ROUTES } from "@/lib/constants";
-import { BriefcaseIcon, ClockIcon, Home, MailIcon, UserIcon } from "lucide-react";
+import { BriefcaseIcon, Home, MailIcon, UserIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -44,15 +44,11 @@ export default function AppSidebar() {
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                        <SidebarMenuButton>
-                            <BriefcaseIcon />
-                            <span>Services</span>
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
-                    <SidebarMenuItem>
-                        <SidebarMenuButton>
-                            <ClockIcon />
-                            <span>Process</span>
+                        <SidebarMenuButton asChild>
+                            <Link href={ROUTES.SERVICES}>
+                                <BriefcaseIcon />
+                                <span>Services</span>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>

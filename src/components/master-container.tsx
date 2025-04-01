@@ -47,8 +47,7 @@ export default function MasterContainer({ children }: LayoutProps) {
                     <div className="flex flex-row">
                         <Link href={ROUTES.HOME}><Button variant="ghost">Home</Button></Link>
                         <Link href={ROUTES.ABOUT}><Button variant="ghost">About</Button></Link>
-                        <Button variant="ghost">Services</Button>
-                        <Button variant="ghost">Process</Button>
+                        <Link href={ROUTES.SERVICES}><Button variant="ghost">Services</Button></Link>
                         <Button variant="ghost">Contact</Button>
                     </div>
                 </div>
