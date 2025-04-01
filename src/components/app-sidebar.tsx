@@ -3,11 +3,12 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { Sidebar, SidebarContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
 
-
 export default function AppSidebar() {
     const { resolvedTheme } = useTheme();
 
-    const coffeeIcon = resolvedTheme === 'dark' ? '/icon-white.svg' : '/icon-black.svg';
+    const coffeeIcon = resolvedTheme === 'dark'
+        ? '/icon-white.svg'
+        : '/icon-black.svg';
 
     return (
         <Sidebar>
@@ -26,7 +27,7 @@ export default function AppSidebar() {
                     <SidebarMenuItem>
                         <SidebarMenuButton>
                             <UserIcon />
-                            <span>About me</span>
+                            <span>About</span>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>

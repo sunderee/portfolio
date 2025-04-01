@@ -1,15 +1,22 @@
 'use client';
 
 import MasterContainer from "@/components/master-container";
+import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Home() {
   const isMobile = useIsMobile();
 
   return <MasterContainer>
-    <div className={`flex flex-col items-center justify-center ${isMobile ? 'h-[calc(100vh-28px)] w-screen' : 'h-screen w-[720px]'}`}>
-      <h1 className="text-2xl font-bold">Peter Aleksander Bizjak</h1>
-      <p className="text-md text-muted-foreground">Software Developer. Cybersecurity Specialist. Consultant.</p>
+    <div className={`flex flex-col items-center justify-center ${isMobile ? 'h-[calc(100vh-28px)] w-[calc(100vw-28px)] px-4' : 'h-[calc(100vh-44px)] w-[720px]'}`}>
+      <h1 className="text-4xl font-bold text-center">Peter Aleksander Bizjak</h1>
+      <p className="text-lg text-muted-foreground text-center">Software Developer. Cybersecurity Specialist. Consultant.</p>
+      <p className="mt-4 text-lg text-center text-muted-foreground">I help businesses build secure, robust, and efficient software solutions that solve real-world problems and drive growth.</p>
+
+      <div className="mt-12 flex flex-row gap-4">
+        <Button variant="outline">What can I do for you?</Button>
+        <Button variant="default">Get in touch today</Button>
+      </div>
     </div>
   </MasterContainer>
 }
