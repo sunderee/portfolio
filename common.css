@@ -1,0 +1,117 @@
+:root {
+    --font-family: system-ui, sans-serif;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --muted-text-color: #555555;
+    --link-color: #FF9500;
+    --border-color: #eeeeee;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #000000;
+        --text-color: #ffffff;
+        --muted-text-color: #aaaaaa;
+        --link-color: #FF9F00;
+        --border-color: #333333;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Common container styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    width: calc(100% - 2rem);
+    max-width: 100%;
+}
+
+/* Desktop view container */
+@media (min-width: 760px) {
+    .container {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+}
+
+h1 {
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-color);
+}
+
+p {
+    margin: 0.75rem 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--muted-text-color);
+    font-size: 1rem;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--link-color);
+}
+
+/* Navigation styles */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.nav-container a {
+    margin: 0 0.75rem;
+}
+
+/* Common content styles */
+.content {
+    width: 100%;
+}
+
+.section-title {
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+ul {
+    margin: 0.5rem 0 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.muted-text {
+    font-size: 0.9rem;
+    color: var(--muted-text-color);
+}
