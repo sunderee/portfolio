@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 * {
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Inter", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
